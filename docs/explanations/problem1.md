@@ -26,7 +26,7 @@ subtract a **palindrome** $p$ where $p \in \mathbb{N}$.
 
 ### theorem
 
-for any number of stones $S \gt 0$:
+for any number of stones $S > 0$:
 
 $$
 S \in \text{winning} \iff S \not \equiv 0 \pmod{10}
@@ -67,12 +67,12 @@ checking small values:
   $S = 10 - p$, where $S \in \{1, 2, 3, \dots, 9\}$. according to our lemma and
   the case above, the next player can remove all $p \equiv S$ stones, putting
   the current player at a **losing position**.
-- if $S \lt 10$, the player can remove all $S$ stones, since it is a valid
+- if $S < 10$, the player can remove all $S$ stones, since it is a valid
   **palindrome**, putting them in a **winning position**.
 
 #### inductive hypothesis
 
-assume that for all integers $k$ such that $0 \lt k \lt S$, our theorem holds --
+assume that for all integers $k$ such that $0 < k < S$, our theorem holds --
 where $k$ is a **losing position** _if and only if_ $k \equiv 0 \pmod{10}$.
 
 #### inductive step
@@ -95,15 +95,15 @@ we know that:
 so the new number of stones $S' \pmod{10}$ is:
 
 $$
-\begin{align*}
+\begin{aligned}
 S' \pmod{10} &= (S-p) \pmod{10} \\
-             &= (0 - (p \pmod{10})) \pmod{10} \tag{substitution} \\
-\end{align*}
+             &= (0 - (p \pmod{10})) \pmod{10} && \text{(substitution)} \\
+\end{aligned}
 $$
 
 since $p \pmod{10} \in \{1, 2, 3, \dots, 9\}$, it follows that
 $S'\pmod{10} \not= 0$. therefore, any move from $S$ results in a new pile $S'$
-which is not a multiple of $10$. since $p \gt 0$, we have $S' \lt S$.
+which is not a multiple of $10$. since $p > 0$, we have $S' < S$.
 
 by our inductive hypothesis, any such $S'$ is a **winning position**. since
 every possible move from $S$ leads to a **losing position**, $S$ must be a
@@ -120,30 +120,30 @@ should satisfy these requirements:
 - since $S \not \equiv 0 \pmod{10}$, $p$ will be an integer from $1$ to $9$
 - $p \in \{1, 2, 3, \dots, 9\}$, which is a **palindrome** according to our
   definition
-- $p = S \pmod{10} \le 9 \lt S$ for $S \ge 10$. if $S \lt 10$, $p = S$ is also a
-  valid move.
+- $p = S \pmod{10} \le 9 < S$ for $S > 10$. if $S < 10$, $p = S$ is also a valid
+  move.
 
 the new number of stones will be:
 
 $$
-\begin{align*}
+\begin{aligned}
 S' &= S - p \\
-   &= S - (S \pmod{10}) \tag{substitution} \\
-\end{align*}
+   &= S - (S \pmod{10}) && \text{(substitution)} \\
+\end{aligned}
 $$
 
 by that definition, $S'$ is now also divisible by $10$.
 
 $$
-\begin{align*}
+\begin{aligned}
 S'           &= S - (S \pmod{10}) \\
 S' \pmod{10} &= S - (S \pmod{10}) \pmod{10} \\
-(S \pmod{10}) - (S \pmod{10})) &= 0 \pmod{10} \tag{subtraction} \\
-\end{align*}
+(S \pmod{10}) - (S \pmod{10})) &= 0 \pmod{10} && \text{(subtraction)} \\
+\end{aligned}
 $$
 
-since $p \gt 0$, we have $S' \lt S$. by our inductive hypothesis, this new
-position $S'$ is a **losing position**.
+since $p > 0$, we have $S' < S$. by our inductive hypothesis, this new position
+$S'$ is a **losing position**.
 
 we have found a move from $S$ to a **losing position**, which means $S$ is an
 **winning position**. this proves the claim for this case.
@@ -156,5 +156,5 @@ for all natural numbers.
 the first player wins if the starting number of stones $S$ is not a multiple of
 $10$. the next player wins if $S$ is a multiple of $10$.
 
-since a number ending in $0$ is exactly when $S \pmod{10} = 0$, the winning
+since a number ending in $0$ is exactly when $S \pmod{10} = 0$, the winning
 strategy is simply to check if the last digit of $S$ is 0. $\blacksquare$
