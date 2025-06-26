@@ -1,0 +1,100 @@
+# Problem 2. Milk Exchange
+
+Farmer John's $N$ ($1 \leq N \leq 2\cdot105$) cows are lined up in a circle such
+that for each $i$ in $1,2,\dots,N−1$, the cow to the right of cow $i$ is cow
+$i+1$, and the cow to the right of cow $N$ is cow $1$. The $i$-th cow has a
+bucket with integer capacity $a_i$ ($1 \leq a_i \leq 109$) liters. All buckets
+are initially full.
+
+Every minute, the cows exchange milk according to a string $s_1s_2 \dots s_N$
+consisting solely of the characters 'L' and 'R'. if the $i$-th cow has at least
+$1$ liter of milk, she will pass $1$ liter of milk to the cow to her left if
+$s_i=L$, or to the right if $s_i=R$. All exchanges happen simultaneously (i.e.,
+if a cow has a full bucket but gives away a liter of milk but also receives a
+liter, her milk is preserved). If a cow's total milk ever ends up exceeding
+$a_i$, then the excess milk will be lost.
+
+Farmer John wants to know: after $M$ minutes ($1 \leq M \leq 109$), what is the
+total amount of milk left among all cows?
+
+## INPUT FORMAT (input arrives from the terminal / stdin)
+
+The first line contains $N$ and $M$.
+
+The second line contains a string $s_1s_2 \dots s_N$ consisting solely of the
+characters 'L' or 'R', denoting the direction each cow will pass their milk in.
+
+The third line contains integers $a_1,a_2,\dots,a_N$, the capacities of each
+bucket.
+
+## OUTPUT FORMAT (print output to the terminal / stdout):
+
+Output an integer, the sum of milk among all cows after $M$ minutes.
+
+Note that the large size of integers involved in this problem may require the
+use of 64-bit integer data types (e.g., a `long long` in C/C++).
+
+---
+
+### SAMPLE INPUT:
+
+```
+3 1
+RRL
+1 1 1
+```
+
+### SAMPLE OUTPUT:
+
+```
+2
+```
+
+Cows $2$ and $3$ pass each other one liter of milk, so their milk is preserved.
+When cow $1$ passes their milk to cow $2$, cow $2$'s bucket overflows, and $1$
+liter of milk is lost after one minute.
+
+---
+
+### SAMPLE INPUT:
+
+```
+5 20
+LLLLL
+3 3 2 3 3
+```
+
+### SAMPLE OUTPUT:
+
+```
+14
+```
+
+Each cow is passing a liter of milk to the cow on the left and gaining a liter
+of milk from the cow on the right, so all of the milk is preserved regardless of
+how much time passes.
+
+---
+
+### SAMPLE INPUT:
+
+```
+9 5
+RRRLRRLLR
+5 8 4 9 3 4 9 5 4
+```
+
+### SAMPLE OUTPUT:
+
+```
+38
+```
+
+Initially, there are a total of $51$ liters of milk. After $5$ minutes, cows
+$3$, $6$, and $7$ will lose $5$, $3$, and $5$ liters of milk respectively.
+Therefore, a total of $38$ liters of milk remain.
+
+## SCORING:
+
+- Inputs 4-8: $N,M \leq 1000$
+- Inputs 9-16: No additional constraints.
