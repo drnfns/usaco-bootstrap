@@ -15,6 +15,10 @@ void solve() {
 }
 
 int main() {
+  // io optimisation
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+
   int tc; // test count
   std::cin >> tc;
 
