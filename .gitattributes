@@ -1,1 +1,2 @@
-docs/**/*.md linguist-detectable
+docs/**/*.md linguist-detectable=true
+docs/**/*.md linguist-documentation=false
