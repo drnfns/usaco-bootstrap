@@ -1,9 +1,9 @@
 # Problem 2. Milk Exchange
 
-Farmer John's $N$ ($1 \leq N \leq 2\cdot105$) cows are lined up in a circle such
-that for each $i$ in $1,2,\dots,N−1$, the cow to the right of cow $i$ is cow
-$i+1$, and the cow to the right of cow $N$ is cow $1$. The $i$-th cow has a
-bucket with integer capacity $a_i$ ($1 \leq a_i \leq 109$) liters. All buckets
+Farmer John's $N$ ($1 \leq N \leq 2\cdot10^5$) cows are lined up in a circle
+such that for each $i$ in $1,2,\dots,N−1$, the cow to the right of cow $i$ is
+cow $i+1$, and the cow to the right of cow $N$ is cow $1$. The $i$-th cow has a
+bucket with integer capacity $a_i$ ($1 \leq a_i \leq 10^9$) liters. All buckets
 are initially full.
 
 Every minute, the cows exchange milk according to a string $s_1s_2 \dots s_N$
@@ -14,7 +14,7 @@ if a cow has a full bucket but gives away a liter of milk but also receives a
 liter, her milk is preserved). If a cow's total milk ever ends up exceeding
 $a_i$, then the excess milk will be lost.
 
-Farmer John wants to know: after $M$ minutes ($1 \leq M \leq 109$), what is the
+Farmer John wants to know: after $M$ minutes ($1 \leq M \leq 10^9$), what is the
 total amount of milk left among all cows?
 
 ## INPUT FORMAT (input arrives from the terminal / stdin)
