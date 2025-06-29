@@ -1,6 +1,6 @@
 CXX = clang++
 LD = lld
-CXXFLAGS = -O3 -pipe -march=native -flto=thin -fuse-ld=$(LD) -std=c++17 -stdlib=libc++ -Wall -Wextra -pedantic
+CXXFLAGS = -Os -s -pipe -march=native -flto=thin -fuse-ld=$(LD) -std=c++17 -stdlib=libc++ -Wall -Wextra -pedantic -fno-exceptions
 SRCDIR = src
 DISTDIR = dist
 
@@ -12,9 +12,9 @@ TARGETS = $(patsubst $(SRCDIR)/%.cxx,$(DISTDIR)/%,$(SOURCES))
 all: $(TARGETS)
 
 $(DISTDIR)/%: $(SRCDIR)/%.cxx
-	@mkdir -p $(DISTDIR)
 	@$(CXX) $(CXXFLAGS) -o $@ $<
 
 .PHONY: clean
 clean:
 	@rm -rf $(DISTDIR)
+	@mkdir -p $(DISTDIR)
