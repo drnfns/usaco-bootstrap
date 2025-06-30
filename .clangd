@@ -1,0 +1,12 @@
+CompileFlags:
+  Add: [-xc++, -Wall, -Wextra, -std=c++17, -stdlib=libc++]
+  Compiler: clang++
+
+Diagnostics:
+  ClangTidy:
+    Add: 
+      - modernize-*
+      - performance-*
+      - bugprone-*
+    Remove:
+      - modernize-use-trailing-return-type
