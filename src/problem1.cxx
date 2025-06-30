@@ -8,9 +8,9 @@ void solve() {
   // if the last digit is 0, the position is losing
   // otherwise, it is winning
   if (s.back() == '0') {
-    std::cout << "E" << std::endl;
+    std::cout << "E\n";
   } else {
-    std::cout << "B" << std::endl;
+    std::cout << "B\n";
   }
 }
 
