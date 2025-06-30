@@ -5,7 +5,7 @@
 int main() {
   // io optimisation
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(NULL);
+  std::cin.tie(nullptr);
 
   int n, q;
   std::cin >> n >> q;
@@ -30,13 +30,14 @@ int main() {
     std::cin >> v >> s;
 
     // index of the first d_i > s
-    int i = std::upper_bound(d.begin(), d.end(), s) - d.begin();
-    int visitable = n - i; // # of farms can visit
+    auto it = std::upper_bound(d.begin(), d.end(), s);
+    // # of farms can visit
+    int visitable = static_cast<int>(std::distance(it, d.end()));
 
     if (visitable >= v) {
-      std::cout << "YES" << std::endl;
+      std::cout << "YES\n";
     } else {
-      std::cout << "NO" << std::endl;
+      std::cout << "NO\n";
     }
   }
 
