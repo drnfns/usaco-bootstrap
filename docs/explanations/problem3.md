@@ -2,8 +2,8 @@
 
 ## goal
 
-we need is to check if bessie can visit at least $V$ farms if she wakes up at
-time $S$.
+we need to check if bessie can visit at least $V$ farms if she wakes up at time
+$S$.
 
 for each farm $i$, it is only visitable if bessie arrives _before_ it closes.
 
@@ -33,8 +33,8 @@ d_i = c_i - t_i \\
 \therefore S < d_i
 $$
 
-therefore for each query $Q_i = (S, V)$, what we really want to find is the
-amount of farms that have a $d_i$ value that is greater than $S$.
+based on the equation, for each query $Q_i = (S, V)$, what we really want to
+find is the amount of farms that have a $d_i$ value that is greater than $S$.
 
 ## solution one
 
